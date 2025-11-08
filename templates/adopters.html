@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Manage Adopters - Pet Adoption Center</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- templates/adopters.html -->
+<header>
+<header>
+        <h1>Pet Adoption Center</h1>
+        <nav>
+            <a href="/">Home (Demo)</a>
+            <a href="/animals">Manage Animals</a>
+            <a href="/adopters">Manage Adopters</a>
+            <a href="/donors">Manage Donors</a>
+            <a href="/shelters" class="active">Manage Shelters</a>
+            <a href="/reports">Reports</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="container">
+            <h2>Add New Adopter</h2>
+            <!-- Naya adopter add karne ka form -->
+            <form id="add-adopter-form" class="form-layout">
+                <div class="form-group">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <button type="submit">Add Adopter</button>
+                </div>
+            </form>
+            <div id="form-result" class="result-message"></div>
+        </div>
+
+        <div class="container">
+            <h2>All Adopters</h2>
+            <button id="loadAdoptersBtn">Load All Adopters</button>
+            
+            <!-- Saare adopters ka data table mein yahaan aayega -->
+            <div id="adopter-table-container">
+                <p>Click the button to load all adopters...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Yeh 'adopters.js' file hai -->
+    <script src="/static/js/adopters.js" defer></script>
+</body>
+</html>

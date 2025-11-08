@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Animals - Pet Adoption Center</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Pet Adoption Center</h1>
+        <nav>
+            <a href="/">Home (Demo)</a>
+            <a href="/animals">Manage Animals</a>
+            <a href="/adopters">Manage Adopters</a>
+            <a href="/donors">Manage Donors</a>
+            <a href="/shelters" class="active">Manage Shelters</a>
+            <a href="/reports">Reports</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Add New Animal</h2>
+            <!-- Naya animal add karne ka form -->
+            <form id="add-animal-form" class="form-layout">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="species">Species:</label>
+                    <input type="text" id="species" name="species" required>
+                </div>
+                <div class="form-group">
+                    <label for="breed">Breed:</label>
+                    <input type="text" id="breed" name="breed">
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="shelter_id">Shelter ID:</label>
+                    <input type="number" id="shelter_id" name="shelter_id" min="1" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <button type="submit">Add Animal</button>
+                </div>
+            </form>
+            <div id="form-result" class="result-message"></div>
+        </div>
+
+        <div class="container">
+            <h2>All Animals</h2>
+            <button id="loadAllAnimalsBtn">Load All Animals</button>
+            
+            <!-- Saare animals ka data table mein yahaan aayega -->
+            <div id="animal-table-container">
+                <p>Click the button to load all animals...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Yeh 'animals.js' file hai, 'main.js' nahi -->
+    <script src="/static/js/animals.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+Environment variables (PASSWORD HAIN ISMEIN!)
+
+backend/.env
+
+Python cache files
+
+pycache/
+*.pyc
+
+VS Code settings (agar use kar rahe ho)
+
+.vscode/
+
+Windows thumbnails
+
+Thumbs.db

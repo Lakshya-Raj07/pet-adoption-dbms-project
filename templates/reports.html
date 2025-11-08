@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Pet Adoption Center</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Pet Adoption Center</h1>
+        <nav>
+            <a href="/">Home (Demo)</a>
+            <a href="/animals">Manage Animals</a>
+            <a href="/adopters">Manage Adopters</a>
+            <a href="/donors">Manage Donors</a>
+            <a href="/shelters" class="active">Manage Shelters</a>
+            <a href="/reports">Reports</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Report 1 -->
+        <div class="container">
+            <h2>Report: Animal Count by Shelter</h2>
+            <p><strong>Query:</strong> <code>SELECT s.name, COUNT(a.animal_id) FROM Shelter s LEFT JOIN Animal a ON s.shelter_id = a.shelter_id ... GROUP BY s.shelter_id;</code></p>
+            <div id="report1-container">
+                <p>Loading report...</p>
+            </div>
+        </div>
+
+        <!-- Report 2 -->
+        <div class="container">
+            <h2>Report: Employees Earning Above Average Salary</h2>
+            <p><strong>Query:</strong> <code>SELECT name, salary FROM Employee WHERE salary > (SELECT AVG(salary) FROM Employee);</code></p>
+            <div id="report2-container">
+                <p>Loading report...</p>
+            </div>
+        </div>
+
+        <!-- Report 3 -->
+        <div class="container">
+            <h2>Report: Adopters with Multiple Adoptions</h2>
+            <p><strong>Query:</strong> <code>SELECT c.first_name, COUNT(*) FROM Adoption a JOIN Adopter ad ... GROUP BY c.customer_id HAVING COUNT(*) > 1;</code></p>
+            <div id="report3-container">
+                <p>Loading report...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Yeh 'reports.js' file hai -->
+    <script src="/static/js/reports.js" defer></script>
+</body>
+</html>

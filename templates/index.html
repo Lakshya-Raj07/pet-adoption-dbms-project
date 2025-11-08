@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Center</title>
+    <!-- Hamari CSS file ko link kar rahe hain -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+   <header>
+        <h1>Pet Adoption Center</h1>
+        <nav>
+            <a href="/">Home (Demo)</a>
+            <a href="/animals">Manage Animals</a>
+            <a href="/adopters">Manage Adopters</a>
+            <a href="/donors">Manage Donors</a>
+            <a href="/shelters" class="active">Manage Shelters</a>
+            <a href="/reports">Reports</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Available Animals</h2>
+            <div class="controls">
+                <button id="loadAnimalsBtn">Load Available Animals</button>
+            </div>
+            <!-- Data yahaan JavaScript se aayega -->
+            <div id="data-container">
+                <p>Click the button to load data from the database...</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Test Adoption</h2>
+            <p>This will adopt Animal ID 3 (from insertion.py) for Adopter ID 2.</p>
+            <button id="adoptBtn">Test Adopt Animal (ID 3)</button>
+            <div id="adopt-result"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>DBMS Project - 2025</p>
+    </footer>
+
+    <!-- Hamari JavaScript file ko link kar rahe hain -->
+    <!-- 'defer' attribute zaroori hai -->
+    <script src="/static/js/main.js" defer></script>
+</body>
+</html>
