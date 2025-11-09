@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Employees - Pet Adoption Center</title>
+    <!-- CSS Link Add Kiya Gaya Hai -->
+    <link rel="stylesheet" href="/static/css/style.css"> 
+</head>
+<body>
+
+    <header>
+        <h1>Pet Adoption Center</h1>
+        <nav>
+            <a href="/">Home (Demo)</a>
+            <a href="/animals">Manage Animals</a>
+            <a href="/adopters">Manage Adopters</a>
+            <a href="/donors">Manage Donors</a>
+            <a href="/shelters">Manage Shelters</a>
+            <a href="/employees" class="active">Manage Employees</a>
+            <a href="/reports">Reports</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Add New Employee</h2>
+            <form id="add-employee-form" class="form-layout">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <!-- ID ko 'name' theek kiya gaya hai taaki JS file sahi se pakad sake -->
+                    <input type="text" id="name" name="name" required> 
+                </div>
+                <div class="form-group">
+                    <label for="role">Role:</label>
+                    <input type="text" id="role" name="role" required>
+                </div>
+                <div class="form-group">
+                    <label for="salary">Salary (e.g., 60000.00):</label>
+                    <input type="number" id="salary" name="salary" step="0.01" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="shelter_id">Shelter ID:</label>
+                    <input type="number" id="shelter_id" name="shelter_id" min="1" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <button type="submit">Add Employee</button>
+                </div>
+            </form>
+            <div id="form-result" class="result-message"></div>
+        </div>
+
+        <div class="container">
+            <h2>All Employees (Update Salary to Test Trigger)</h2>
+            <div id="employee-table-container">
+                <p>Loading employees...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- JS Logic -->
+    <script src="/static/js/employees.js" defer></script>
+</body>
+</html>

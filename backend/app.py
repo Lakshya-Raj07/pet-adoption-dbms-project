@@ -117,6 +117,11 @@ def serve_donors_page():
     return render_template('donors.html')
 
 
+@app.route('/employees', methods=['GET']) 
+def serve_employees_page():
+    return render_template('employees.html')
+
+
 @app.route('/reports', methods=['GET'])
 def serve_reports_page():
     """Serves the reports.html page."""
@@ -136,6 +141,27 @@ def get_shelters():
 def get_shelter_by_id(shelter_id):
     data, error = select_record_by_id(table_name="Shelter", id_column="shelter_id", id_value=shelter_id)
     return handle_query_result(data, error)
+
+@app.route('/api/shelters', methods=['POST'])
+def add_new_shelter():
+    shelter_data = request.json
+    try:
+        # Hum sirf teen zaroori columns insert karenge
+        insert_data = {
+            'name': shelter_data['name'],
+            'address': shelter_data['address'], # <-- KEY MATCHES SCHEMA (address)
+            'capacity': shelter_data['capacity']
+        }
+    except KeyError:
+        return jsonify({"error": "Missing name, address, or capacity"}), 400
+        
+    data, error = insert_record(table_name="Shelter", insert_data=insert_data)
+    return handle_query_result({"new_shelter_id": data}, error, success_code=201)
+
+@app.route('/api/shelters/<int:shelter_id>', methods=['DELETE'])
+def delete_shelter_route(shelter_id):
+    data, error = delete_record(table_name="Shelter", id_column="shelter_id", id_value=shelter_id)
+    return handle_query_result({"rows_affected": data}, error)
 
 # --- Animal Routes ---
 @app.route('/api/animals', methods=['GET'])
@@ -306,31 +332,30 @@ def create_adoption():
 
 
 
-
+# THIS CODE HAS BEEN MOVED UP DEKHLENA SAB
 # --- Shelter Routes (CRUD) ---
-@app.route('/api/shelters', methods=['POST'])
-def add_new_shelter():
-    shelter_data = request.json
-    try:
-        # Hum sirf teen zaroori columns insert karenge
-        insert_data = {
-            'name': shelter_data['name'],
-            'address': shelter_data['address'], # Address, location nahi
-            'capacity': shelter_data['capacity']
-        }
-    except KeyError:
-        return jsonify({"error": "Missing name, address, or capacity"}), 400
+# @app.route('/api/shelters', methods=['POST'])
+# def add_new_shelter():
+#     shelter_data = request.json
+#     try:
+#         # Hum sirf teen zaroori columns insert karenge
+#         insert_data = {
+#             'name': shelter_data['name'],
+#             'address': shelter_data['address'], # Address, location nahi
+#             'capacity': shelter_data['capacity']
+#         }
+#     except KeyError:
+#         return jsonify({"error": "Missing name, address, or capacity"}), 400
         
-    # insert_record automatically current_occupancy = 0 set kar dega
-    data, error = insert_record(table_name="Shelter", insert_data=insert_data)
-    return handle_query_result({"new_shelter_id": data}, error, success_code=201)
+#     # insert_record automatically current_occupancy = 0 set kar dega
+#     data, error = insert_record(table_name="Shelter", insert_data=insert_data)
+#     return handle_query_result({"new_shelter_id": data}, error, success_code=201)
 
-@app.route('/api/shelters/<int:shelter_id>', methods=['DELETE'])
-def delete_shelter_route(shelter_id):
-    # Yeh aapke 'before_shelter_delete' trigger ko test karega
-    data, error = delete_record(table_name="Shelter", id_column="shelter_id", id_value=shelter_id)
-    return handle_query_result({"rows_affected": data}, error)
-
+# @app.route('/api/shelters/<int:shelter_id>', methods=['DELETE'])
+# def delete_shelter_route(shelter_id):
+#     # Yeh aapke 'before_shelter_delete' trigger ko test karega
+#     data, error = delete_record(table_name="Shelter", id_column="shelter_id", id_value=shelter_id)
+#     return handle_query_result({"rows_affected": data}, error)
 
 
 
