@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Adoption Center</title>
+    
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -11,24 +12,44 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Hamari CSS file ko link kar rahe hain -->
-    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="/static/css/style1.css">
+
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800">
 
-   <header>
-      <h1 style="font-size: 32px; font-weight: bold; margin:20px 5px 20px 5px;">Pet Adoption Center</h1>
-
-       <nav>
-    <a href="/">Home (Demo)</a>
-    <a href="/animals">Manage Animals</a>
-    <a href="/adopters">Manage Adopters</a>
-    <a href="/donors">Manage Donors</a>
-    <a href="/shelters">Manage Shelters</a>
-    <a href="/employees" class="active">Manage Employees</a> <!-- NAYA LINK -->
-    <a href="/reports">Reports</a>
-</nav>
+    <!-- Header Section -->
+    <header class="bg-blue-600 shadow-md">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center py-4 md:h-20">
+                <!-- Logo/Title -->
+                <div class="flex-shrink-0 mb-4 md:mb-0">
+                    <h1 class="text-3xl font-bold text-white text-center md:text-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block -mt-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L9 5.414V17a1 1 0 102 0V5.414l5.293 5.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg> <!-- Simple paw/heart icon placeholder -->
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block -mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                        Pet Adoption Center
+                    </h1>
+                </div>
+                <!-- Navigation -->
+                <nav class="flex flex-wrap justify-center gap-1 md:gap-0 md:space-x-1">
+                    <a href="/" class="text-blue-100 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home (Demo)</a>
+                    <a href="/animals" class="text-blue-100 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Manage Animals</a>
+                    <a href="/adopters" class="text-blue-100 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Manage Adopters</a>
+                    <a href="/donors" class="text-blue-100 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Manage Donors</a>
+                    <a href="/shelters" class="text-blue-100 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Manage Shelters</a>
+                    <a href="/employees" class="bg-blue-500 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Manage Employees</a>
+                    <a href="/reports" class="text-blue-100 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Reports</a>
+                </nav>
+            </div>
+        </div>
     </header>
+
     <!-- Main Content -->
     <main class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         
@@ -77,36 +98,9 @@
         </div>
     </footer>
 
-
-
-
-    
-    <!-- <main> -->
-        <!-- <div class="container"> -->
-            <!-- <h2>Available Animals</h2> -->
-            <!-- <div class="controls"> -->
-                <!-- <button id="loadAnimalsBtn">Load Available Animals</button> -->
-            <!-- </div> -->
-            <!-- Data yahaan JavaScript se aayega -->
-            <!-- <div id="data-container"> -->
-                <!-- <p>Click the button to load data from the database...</p> -->
-            <!-- </div> -->
-        <!-- </div> -->
-
-        <!-- <div class="container"> -->
-            <!-- <h2>Test Adoption</h2> -->
-            <!-- <p>This will adopt Animal ID 3 (from insertion.py) for Adopter ID 2.</p> -->
-            <!-- <button id="adoptBtn">Test Adopt Animal (ID 3)</button> -->
-            <!-- <div id="adopt-result"></div> -->
-        <!-- </div> -->
-    <!-- </main> -->
-
-    <footer>
-        <p>DBMS Project - 2025</p>
-    </footer>
-
-    <!-- Hamari JavaScript file ko link kar rahe hain -->
+   <!-- Hamari JavaScript file ko link kar rahe hain -->
     <!-- 'defer' attribute zaroori hai -->
     <script src="/static/js/main.js" defer></script>
+
 </body>
 </html>

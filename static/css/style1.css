@@ -1,0 +1,117 @@
+/* --- Navigation Menu --- */
+header {
+    position: relative;
+}
+nav {
+    background-color: #3b7ac4; 
+    padding: 10px 0;
+    text-align: center;
+}
+nav a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+nav a:hover, nav a.active {
+    background-color: #4a90e2;
+}
+
+
+/* --- Form Layout --- */
+.form-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 15px 25px; /* row-gap column-gap */
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group.full-width {
+    grid-column: 1 / -1; /* Dono columns tak faila do */
+}
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #444;
+}
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.form-layout button {
+    width: 100%;
+    background-color: #2e7d32; 
+}
+.form-layout button:hover {
+    background-color: #1b5e20;
+}
+.result-message {
+    margin-top: 15px;
+    font-size: 15px;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+
+/* --- Table Styling --- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.data-table th,
+.data-table td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+}
+.data-table th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: 600;
+}
+.data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.data-table tr:hover {
+    background-color: #f1f1f1;
+}
+.data-table .actions {
+    display: flex;
+    gap: 5px;
+}
+.data-table .actions button {
+    padding: 5px 8px;
+    font-size: 12px;
+}
+.btn-update {
+    background-color: #ffb300; 
+}
+.btn-update:hover {
+    background-color: #e69100;
+}
+.btn-delete {
+    background-color: #e57373; 
+}
+.btn-delete:hover {
+    background-color: #d32f2f;
+}
+
+/* Status colors */
+.status-available {
+    color: #2e7d32;
+    font-weight: 600;
+}
+.status-adopted {
+    color: #c62828;
+    font-weight: 600;
+}
+h3{
+    color: black;
+    font-weight: 800;
+}
